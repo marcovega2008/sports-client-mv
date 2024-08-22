@@ -97,7 +97,7 @@ table, th, td {
 }
 
 th, td {
-  padding: 8px;
+  padding: 2px;
   text-align: center;
   vertical-align: middle; 
 }
@@ -655,10 +655,10 @@ th, td {
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="infoModalLabel">Detalles del Partido</h5>
+        <h5 class="modal-title" id="infoModalLabel">Partido</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body modal-dialog-scrollable">
         <div id="modalContent">
           <!-- Aquí se mostrarán los detalles del partido -->
         </div>
@@ -691,17 +691,17 @@ var v_data = [
       {
         "id": 1,
         "name": "Club Deportivo Olmedo de Riobamba",
-        "label": "Olmedo",
+        "label": "Club Olmedo",
         "label1": "Barcelona",
         "icon": "../assets/imgs/logo_casa.png",
-        "icon1": "../assets/imgs/logo_sur.png",   
+        "icon1": "../assets/imgs/logo_casa.png",   
         "jugador": "Andres Crespo",
         "jugador1": "Marcelo Campo",
         "jugador2": "Marvin Cortez",
-        "jugador3": "Andres Mauricio Pedrozo Borja",        
+        "jugador3": "Andres Pedrozo",        
         "marcador": "2 - 0",
         "date": "25-08-2024",
-        "lugar": "Cancha 1",
+        "lugar": "Cancha 1 del Parque de Solanda",
         "hora": "12H00",
         "estado": "Finalizado",
         "num_jug": 9
@@ -712,14 +712,14 @@ var v_data = [
         "label": "Barcelona",
         "label1": "America",
         "icon": "../assets/imgs/logo_sur.png",
-        "icon1": "../assets/imgs/logo_casa.png",  
+        "icon1": "../assets/imgs/logo_sur.png",  
         "jugador": "Andres Crespo",
         "jugador1": "Marcelo Campo",
         "jugador2": "Marvin Cortez",
-        "jugador3": "Andres Mauricio Pedrozo Borja",        
+        "jugador3": "Andres Pedrozo",        
         "marcador": "0 - 2",
         "date": "21-10-2024",
-        "lugar": "Cancha 2",
+        "lugar": "Cancha 1 del Parque de la Carolina",
         "hora": "13H00",        
         "estado": "Finalizado",
         "num_jug": 2
@@ -731,14 +731,14 @@ var v_data = [
         "label": "Quiteño",
         "label1": "Boca",
         "icon": "../assets/imgs/logo_casa.png",
-        "icon1": "../assets/imgs/logo_sur.png", 
+        "icon1": "../assets/imgs/logo_casa.png", 
         "jugador": "Andres Crespo",
         "jugador1": "Marcelo Campo",
         "jugador2": "Marvin Cortez",
-        "jugador3": "Andres Mauricio Pedrozo Borja",        
+        "jugador3": "Andres Pedrozo",        
         "marcador": "5 - 0",
         "date": "15-11-2024",
-        "lugar": "Cancha 5",
+        "lugar": "Cancha 1 del Parque de la Carolina",
         "hora": "10H00",   
         "estado": "Finalizado",
         "num_jug": 9
@@ -749,14 +749,14 @@ var v_data = [
         "label": "Liga de Quito",
         "label1": "Racing",
         "icon": "../assets/imgs/logo_sur.png",
-        "icon1": "../assets/imgs/logo_casa.png",  
+        "icon1": "../assets/imgs/logo_sur.png",  
         "jugador": "Andres Crespo",
         "jugador1": "Marcelo Campo",
         "jugador2": "Marvin Cortez",
-        "jugador3": "Andres Mauricio Pedrozo Borja",  
+        "jugador3": "Andres Pedrozo",  
         "marcador": "2 - 2",  
         "date": "20-08-2024",
-        "lugar": "Cancha 8",
+        "lugar": "Cancha 5 del Parque de la Carolina",
         "hora": "15H00",   
         "estado": "Finalizado",  
         "num_jug": 9
@@ -767,9 +767,10 @@ var v_data = [
         "label": "River Plate",
         "label1": "Morelia",
         "icon": "../assets/imgs/logo_sur.png",
-        "icon1": "../assets/imgs/logo_casa.png", 
+        "icon1": "../assets/imgs/logo_sur.png", 
         "date": "12-08-2024",
-        "lugar": "Cancha 2",
+        "marcador": "0 - 0",  
+        "lugar": "Cancha 3 del Parque de la Carolina",
         "hora": "14H00",      
         "estado": "Pendiente",
         "num_jug": 9
@@ -783,7 +784,8 @@ var v_data = [
         "icon": "../assets/imgs/logo_casa.png",
         "icon1": "../assets/imgs/logo_casa.png",  
         "date": "19-08-2024",
-        "lugar": "Cancha 1",
+        "marcador": "0 - 0",  
+        "lugar": "Cancha 1 del Parque de la Carolina",
         "hora": "09H00",    
         "estado": "Pendiente",
         "num_jug": 9
@@ -815,7 +817,7 @@ var v_data = [
   <thead>
     <tr>
       <th scope="col">Equipo 1</th>
-      <th scope="col">vs</th>
+      <th scope="col">&nbsp;&nbsp;</th>
       <th scope="col">Equipo 2</th>    
     </tr>
   </thead>
@@ -823,25 +825,21 @@ var v_data = [
     <tr>      
       <td><img src="${match.team1.icon}" alt=" " width="70" height="70"></td>
       <td><img src="../assets/imgs/contra.png" alt=" " width="30" height="30"></td>
-      <td><img src="${match.team1.icon1}" alt=" " width="60" height="60"></td>
+      <td><img src="${match.team1.icon1}" alt=" " width="70" height="70"></td>
     </tr>
     <tr>      
       <td>${match.team1.label}</td>
-      <td>vs</td>
+      <td></td>
       <td>${match.team1.label1} </td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    </tr>   
+     <tr style="font-size: 11px">      
+      <td>Hora: ${match.team1.hora}</td>
+      <td></td>
+      <td>Fecha: ${match.team1.date} </td>
+    </tr> 
+     <tr style="font-size: 11px">      
+      <td colspan="3">Lugar: ${match.team1.lugar}</td>       
+    </tr> 
     </tbody>
     `;
 
@@ -852,12 +850,126 @@ var v_data = [
       
       // Rellenar contenido del modal con los detalles del partido
       document.getElementById('modalContent').innerHTML = `
-        <div class="team-details">
-          <h3>${match.team1.label} vs ${match.team2.label}</h3>
-          <p>Fecha: ${new Date().toLocaleDateString()}</p>
-          <p>Hora: ${new Date().toLocaleTimeString()}</p>
-          <p>Lugar: Estadio Parque la Carolina</p>
-        </div>
+      
+      <table>      
+      <tbody>
+      <tr style="font-size: 13px; color: #000000">      
+      <td>${match.team1.label}</td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
+      <td>${match.team1.label1}</td>
+      </tr>    
+      </tbody>
+      </table>
+      <hr>
+      <table>      
+      <tbody>
+      <tr>      
+      <td><img src="${match.team1.icon}" alt=" " width="70" height="70"></td>
+      <td style="font-size: 25px; color: #1a237e">${match.team1.marcador}</td>
+      <td><img src="${match.team1.icon1}" alt=" " width="60" height="60"></td>
+      </tr>    
+      </tbody>
+      </table>
+      <hr>   
+      <table>
+      <tr style="font-size: 12px">      
+      <td>Hora: ${match.team1.hora}</td>
+      <td></td>
+      <td>Fecha: ${match.team1.date} </td>
+       </tr> 
+      <tr style="font-size: 12px">      
+      <td colspan="3">Lugar: ${match.team1.lugar}</td>       
+       </tr> 
+      </table> 
+      <hr>   
+      <table>
+      <tr style="font-size: 13px; color: #1a237e; text-align: justify">     
+      <td>${match.team1.estado} </td>
+      </tr> 
+     </table> 
+     <hr> 
+     <strong>Detalles del Partido</strong>
+     <hr>
+     <strong>Goles:</strong>
+     <hr>
+       <table>
+      <tr style="font-size: 13px; color: #1a237e;">     
+       <td><img src="../assets/imgs/logo_gol.png" alt=" " width="15" height="15"></td>
+       <td>Jugador: ${match.team1.jugador} &nbsp;-&nbsp; Equipo: ${match.team1.label} </td>   
+       </tr> 
+      <tr style="font-size: 13px; color: #1a237e;">     
+       <td><img src="../assets/imgs/logo_gol.png" alt=" " width="15" height="15"></td>      
+       <td>Jugador: ${match.team1.jugador1} &nbsp;-&nbsp; Equipo: ${match.team1.label1} </td>   
+      </tr>
+      <tr style="font-size: 13px; color: #1a237e;">     
+       <td><img src="../assets/imgs/logo_gol.png" alt=" " width="15" height="15"></td>      
+       <td>Jugador: ${match.team1.jugador2} &nbsp;-&nbsp; Equipo: ${match.team1.label} </td>   
+      </tr>
+       <tr style="font-size: 13px; color: #1a237e;">     
+       <td><img src="../assets/imgs/logo_gol.png" alt=" " width="15" height="15"></td>      
+       <td>Jugador: ${match.team1.jugador3} &nbsp;-&nbsp; Equipo: ${match.team1.label1} </td>   
+      </tr>
+     </table>  
+     <hr>
+     <strong>Amonestaciones:</strong>
+     <hr>
+    <strong>Tarjetas Amarillas:</strong>
+     <hr>
+      <table>
+      <tr style="font-size: 13px; color: #1a237e;">     
+       <td><img src="../assets/imgs/logo_amarilla.png" alt=" " width="15" height="15"></td>
+       <td>Jugador: ${match.team1.jugador} &nbsp;-&nbsp; Equipo: ${match.team1.label} </td>   
+       </tr> 
+      <tr style="font-size: 13px; color: #1a237e;">     
+       <td><img src="../assets/imgs/logo_amarilla.png" alt=" " width="15" height="15"></td>      
+       <td>Jugador: ${match.team1.jugador1} &nbsp;-&nbsp; Equipo: ${match.team1.label1} </td>   
+      </tr>
+      <tr style="font-size: 13px; color: #1a237e;">     
+       <td><img src="../assets/imgs/logo_amarilla.png" alt=" " width="15" height="15"></td>      
+       <td>Jugador: ${match.team1.jugador2} &nbsp;-&nbsp; Equipo: ${match.team1.label} </td>   
+      </tr>
+       <tr style="font-size: 13px; color: #1a237e;">     
+       <td><img src="../assets/imgs/logo_amarilla.png" alt=" " width="15" height="15"></td>      
+       <td>Jugador: ${match.team1.jugador3} &nbsp;-&nbsp; Equipo: ${match.team1.label1} </td>   
+      </tr>
+      <hr>
+      <table>
+      <tr style="font-size: 13px; color: #1a237e;">     
+       <td><img src="../assets/imgs/logo_amarilla.png" alt=" " width="15" height="15"></td>
+       <td>Jugador: ${match.team1.jugador} &nbsp;-&nbsp; Equipo: ${match.team1.label} </td>   
+       </tr> 
+      <tr style="font-size: 13px; color: #1a237e;">     
+       <td><img src="../assets/imgs/logo_amarilla.png" alt=" " width="15" height="15"></td>      
+       <td>Jugador: ${match.team1.jugador1} &nbsp;-&nbsp; Equipo: ${match.team1.label1} </td>   
+      </tr>
+      <tr style="font-size: 13px; color: #1a237e;">     
+       <td><img src="../assets/imgs/logo_amarilla.png" alt=" " width="15" height="15"></td>      
+       <td>Jugador: ${match.team1.jugador2} &nbsp;-&nbsp; Equipo: ${match.team1.label} </td>   
+      </tr>
+       <tr style="font-size: 13px; color: #1a237e;">     
+       <td><img src="../assets/imgs/logo_amarilla.png" alt=" " width="15" height="15"></td>      
+       <td>Jugador: ${match.team1.jugador3} &nbsp;-&nbsp; Equipo: ${match.team1.label1} </td>   
+      </tr>
+      <hr>
+      <table>
+      <tr style="font-size: 13px; color: #1a237e;">     
+       <td><img src="../assets/imgs/logo_amarilla.png" alt=" " width="15" height="15"></td>
+       <td>Jugador: ${match.team1.jugador} &nbsp;-&nbsp; Equipo: ${match.team1.label} </td>   
+       </tr> 
+      <tr style="font-size: 13px; color: #1a237e;">     
+       <td><img src="../assets/imgs/logo_amarilla.png" alt=" " width="15" height="15"></td>      
+       <td>Jugador: ${match.team1.jugador1} &nbsp;-&nbsp; Equipo: ${match.team1.label1} </td>   
+      </tr>
+      <tr style="font-size: 13px; color: #1a237e;">     
+       <td><img src="../assets/imgs/logo_amarilla.png" alt=" " width="15" height="15"></td>      
+       <td>Jugador: ${match.team1.jugador2} &nbsp;-&nbsp; Equipo: ${match.team1.label} </td>   
+      </tr>
+       <tr style="font-size: 13px; color: #1a237e;">     
+       <td><img src="../assets/imgs/logo_amarilla.png" alt=" " width="15" height="15"></td>      
+       <td>Jugador: ${match.team1.jugador3} &nbsp;-&nbsp; Equipo: ${match.team1.label1} </td>   
+      </tr>
+     </table>  
+     
       `;
       
       myModal.show();
